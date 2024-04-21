@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>URL Shorten</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
@@ -23,13 +23,16 @@
                 });
             });
         });
-
     </script>
 </head>
 <body>
 <div>
-    <form action="/api/v1/proccessBitly" method="POST" th:action="@{/api/v1/proccessBitly}" th:method="POST">
-        <input type="text" name="longURL" id="longURL" th:field="*{longURL}" placeholder="Linki giriniz...">
+    <div id="branding">
+        <h1>BERK'S SHORTENER</h1>
+        <span style="font-size: 0.8rem; color: #999;">using bilty</span>
+    </div>
+    <form action="/api/v1/proccessBitly" method="POST">
+        <input type="text" name="longURL" id="longURL" placeholder="Linki giriniz...">
         <button class="button" type="submit">Gönder</button>
     </form>
     <div id="shortURLResult"></div>
